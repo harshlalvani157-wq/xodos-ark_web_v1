@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0714">
+  <meta name="description" content="XoDos-Ark is a native Android app that wraps the XoDos emulator in a secure container.">
+  <title>XoDos-Ark — One Ship. Every System. No Limits.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grid"></div></div>
+
+  <nav aria-label="Primary navigation">
+    <div class="nav-inner glass">
+      <a class="brand" href="#top" aria-label="XoDos-Ark home">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="29" stroke="#8b5cf6" stroke-width="3"/><path d="M32 14c10 0 18 8 18 18s-8 18-18 18-18-8-18-18" stroke="#a78bfa" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="5" fill="#8b5cf6"/></svg>
+        <span>XoDos-Ark</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navMenu">
+        <a href="#features">Features</a><a href="#start">Get Started</a>
+        <a class="btn btn-primary" href="https://github.com/xodiosx/XoDos-Ark/releases" target="_blank" rel="noopener">Download APK</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero wrap">
+      <span class="badge glass"><span class="dot"></span>Native Android · Open Source</span>
+      <h1>A ship small enough for your pocket,<br class="br-lg"> large enough for <span class="ark">every world</span> you’ve imagined.</h1>
+      <p class="sub">XoDos-Ark wraps the powerful XoDos emulator inside a secure container — preserving your entire digital legacy. Windows, Linux, DOS and exotic retro systems, all on one vessel. Noah’s Ark for software.</p>
+      <div class="cta"><a class="btn btn-primary" href="https://github.com/xodiosx/XoDos-Ark/releases" target="_blank" rel="noopener">↓&nbsp; Download Latest APK</a><a class="btn" href="https://github.com/xodiosx/XoDos-Ark" target="_blank" rel="noopener">View on GitHub</a></div>
+      <p class="tagline">“One Ship. Every System. No Limits.”</p>
+    </header>
+
+    <section id="features" class="wrap">
+      <div class="sec-head rv"><span class="kicker">Why XoDos-Ark</span><h2>The flood of time can’t drown what’s inside the Ark</h2><p>More than an emulator — a vessel of imagination that keeps old software alive.</p></div>
+      <div class="cards">
+        <article class="card glass rv"><div class="icon">▣</div><h3>All-in-One Vessel</h3><p>Run Windows, Linux, DOS and exotic retro systems side by side — no separate VMs required.</p><span class="quote">“Two of every kind? No — the Ark holds every kind.”</span></article>
+        <article class="card glass rv"><div class="icon">▯</div><h3>Pocket-Sized Infinity</h3><p>The entire history of personal computing fits on your phone. Save snapshots, share configs, never lose a program again.</p></article>
+        <article class="card glass rv"><div class="icon">ϟ</div><h3>Built for Android</h3><p>Optimised touch controls and seamless file sharing between guest and host. Emulation doesn’t get more portable.</p></article>
+        <article class="card glass rv"><div class="icon">☼</div><h3>Preservation First</h3><p>Not about running the latest software — about keeping the old ones alive. Every archived version is a win against digital entropy.</p></article>
+        <article class="card glass rv"><div class="icon">✓</div><h3>Secure by Design</h3><p>Each guest runs in an isolated sandbox. Your host data stays protected, even with unstable or outdated OS images.</p></article>
+        <article class="card glass rv"><div class="icon">≈</div><h3>Weather the Storm</h3><p>Where the world sees a flood, we see a cargo manifest. Sail with XoDos-Ark and carry your computing history with you.</p></article>
+      </div>
+    </section>
+
+    <section id="start" class="wrap"><div class="sec-head rv"><span class="kicker">Getting Started</span><h2>Board the Ark in minutes</h2><p>Install the APK, pick a distro, and launch your first desktop.</p></div><div class="steps">
+      <article class="step glass rv"><span class="num">1</span><div><h3>Install the APK</h3><p>Grab the latest release from GitHub, install it, and grant the requested permissions. Requires Android 10 (API 29)+.</p></div></article>
+      <article class="step glass rv"><span class="num">2</span><div><h3>Pick your distro &amp; update</h3><p>Select a Linux distribution, wait for install, then restart into the shell. First things first:</p><pre><code>apt update &amp;&amp; apt upgrade -y</code></pre></div></article>
+      <article class="step glass rv"><span class="num">3</span><div><h3>Install a desktop environment</h3><p>Choose a GUI such as XFCE4, then pick your display backend (X11 or Wayland).</p></div></article>
+      <article class="step glass rv"><span class="num">4</span><div><h3>Launch the desktop</h3><p>Start your session from the terminal or a script button. For XFCE4 on X11:</p><pre><code>export DISPLAY=:0
+ dbus-launch --exit-with-session xfce4-session &amp;</code></pre></div></article>
+    </div></section>
+
+    <section id="download" class="wrap"><div class="dl-card glass rv"><span class="kicker">Download</span><h2>Ready to set sail?</h2><p>Get the latest pre-built APK from the Releases page. The Ark sails on even older devices.</p><a class="btn btn-primary" href="https://github.com/xodiosx/XoDos-Ark/releases" target="_blank" rel="noopener">↓&nbsp; Get the Latest Release</a><div class="req"><span class="chip">Minimum Android <b>10 (API 29)</b></span><span class="chip">Format <b>APK</b></span><span class="chip">License <b>Open Source</b></span></div></div></section>
+  </main>
+
+  <footer><div class="wrap"><div class="glass"><p><b>XoDos-Ark</b> — a vessel of imagination, built on the shoulders of giants: Termux, Termux-X11, Wayland &amp; Trierarch.</p><p class="foot-links"><a href="https://github.com/xodiosx/XoDos-Ark" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/xodiosx/XoDos-Ark/releases" target="_blank" rel="noopener">Releases</a> · <a href="https://github.com/xodiosx/XoDos-Ark#readme" target="_blank" rel="noopener">Documentation</a></p><p class="fine">“Bounded in a nutshell, yet king of infinite space.” — inspired by Hamlet, Act II, Scene II</p></div></div></footer>
+  <script src="main.js" defer></script>
+</body>
+</html>
