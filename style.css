@@ -19,3 +19,12 @@ section{padding-block:clamp(40px,8vw,64px)}.sec-head{text-align:center;margin-bo
 .liquid-glass-root{position:relative}
 .liquid-scene{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;border-radius:inherit;background:radial-gradient(650px 360px at 15% 0%,rgba(91,33,182,.34),transparent 70%),radial-gradient(650px 420px at 90% 100%,rgba(49,46,129,.28),transparent 72%),rgba(10,7,20,.96)}
 .liquid-scene:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(167,139,250,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,.055) 1px,transparent 1px);background-size:56px 56px;opacity:.55}
+
+/* Mobile navigation hardening: keep the drawer dark and close it before scrolling content. */
+@media(max-width:767px){
+  nav .nav-links.open{background-color:rgba(18,11,34,.98);background-image:linear-gradient(145deg,rgba(139,92,246,.14),rgba(10,7,20,.92));color:var(--ink);border-color:var(--stroke-hi);z-index:60;isolation:isolate}
+  nav .nav-links.open a{color:var(--ink)}
+  nav .nav-links.open a:hover{background:rgba(167,139,250,.16)}
+  nav .nav-toggle.is-open{background:rgba(139,92,246,.24);border-color:var(--stroke-hi)}
+  nav .nav-toggle.is-open span{background:#fff}
+}

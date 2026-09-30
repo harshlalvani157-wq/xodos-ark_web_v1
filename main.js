@@ -24,10 +24,12 @@ import { LiquidGlass } from './vendor/liquidglass.js';
   if (toggle && menu) {
     function closeMenu() {
       menu.classList.remove('open');
+      toggle.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
     }
     toggle.addEventListener('click', function () {
       var open = menu.classList.toggle('open');
+      toggle.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     menu.addEventListener('click', function (event) {
@@ -39,6 +41,15 @@ import { LiquidGlass } from './vendor/liquidglass.js';
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') closeMenu();
     });
+    var menuOpenedAt = 0;
+    toggle.addEventListener('click', function () {
+      if (menu.classList.contains('open')) menuOpenedAt = window.scrollY;
+    });
+    window.addEventListener('scroll', function () {
+      if (menu.classList.contains('open') && Math.abs(window.scrollY - menuOpenedAt) > 8) {
+        closeMenu();
+      }
+    }, { passive: true });
   }
 
   // The library requires glass elements to be direct children of their root.
