@@ -57,18 +57,32 @@ import { LiquidGlass } from './vendor/liquidglass.js';
     var glassElements = group.root.querySelectorAll(':scope > ' + group.selector);
     if (!glassElements.length) return;
 
+    // The reference renderer samples sibling content inside its root. The
+    // original page keeps its purple background outside these roots, so add a
+    // visual scene sibling for the shader to sample instead of a blank canvas.
+    var scene = document.createElement('div');
+    scene.className = 'liquid-scene';
+    scene.setAttribute('aria-hidden', 'true');
+    group.root.insertBefore(scene, group.root.firstChild);
+    group.root.classList.add('liquid-glass-root');
+
     glassElements.forEach(function (element) {
       var pill = element.classList.contains('badge');
       element.dataset.config = JSON.stringify({
-        blurAmount: 0.22,
-        refraction: 0.72,
-        chromAberration: 0.035,
-        edgeHighlight: 0.12,
-        fresnel: 0.85,
+        // Regular LiquidGlass look from the reference demo. Frosted mode
+        // uses blurAmount: 0.25; dark mode uses brightness: -0.3.
+        blurAmount: 0,
+        refraction: 0.69,
+        chromAberration: 0.05,
+        edgeHighlight: 0.05,
+        fresnel: 1,
         cornerRadius: pill ? 999 : 24,
         zRadius: pill ? 24 : 34,
-        shadowOpacity: 0.22,
-        shadowSpread: 8
+        shadowOpacity: 0.3,
+        shadowSpread: 10,
+        brightness: 0,
+        tintStrength: 0,
+        saturation: 0
       });
       element.classList.add('liquid-glass-ready');
     });
